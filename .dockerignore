@@ -1,0 +1,35 @@
+# Python cache and virtual envs
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.venv/
+venv/
+ENV/
+
+# Git
+.git/
+.gitignore
+
+# Local environment files and secrets
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build and editor artifacts
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Not needed in image
+node_modules/
+epaper_output.csv
+*.pdf
+*.png
+*.jpg
+*.jpeg
