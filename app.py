@@ -42,7 +42,11 @@ OUTPUT_CSV = os.path.join(BASE_DIR, "epaper_output.csv")
 os.makedirs(TEMPLATES_DIR, exist_ok=True)
 os.makedirs(STATIC_DIR, exist_ok=True)
 
-app = FastAPI(title="Gujarati Epaper Extractor")
+app = FastAPI(
+    title="Gujarati News Extractor",
+    description="Extract articles from Gujarati newspaper PDFs using AI",
+    version="1.0.0"
+)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
