@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gujarati News Extractor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      color: #2c3e50;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-top: 20px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .header p {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+    }
+
+    .form-section {
+      margin-bottom: 32px;
+    }
+
+    .form-section:last-of-type {
+      margin-bottom: 24px;
+    }
+
+    .field {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="url"] {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      background: #ffffff;
+    }
+
+    input[type="text"]:focus,
+    input[type="date"]:focus,
+    input[type="url"]:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px dashed #cbd5e1;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #f8fafc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    input[type="file"]:hover {
+      border-color: #94a3b8;
+      background: #f1f5f9;
+    }
+
+    .btn-container {
+      margin-top: 32px;
+    }
+
+    button {
+      width: 100%;
+      background: #3b82f6;
+      color: #ffffff;
+      border: none;
+      padding: 13px 24px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background: #2563eb;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .info-box {
+      margin-top: 32px;
+      padding: 16px 18px;
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 6px;
+    }
+
+    .info-box p {
+      font-size: 13px;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .info-box strong {
+      font-weight: 600;
+    }
+
+    .info-box code {
+      background: #dbeafe;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 28px 20px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Gujarati News Extractor</h1>
+    <p>Extract and process articles from Gujarati newspaper PDFs</p>
+  </div>
+
+  <div class="container">
+    <form id="uploadForm" action="/process" method="post" enctype="multipart/form-data">
+      <div class="form-section">
+        <div class="field">
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required />
+        </div>
+
+        <div class="field">
+          <label for="newspaper_name">Newspaper Name</label>
+          <input id="newspaper_name" name="newspaper_name" type="text" placeholder="Enter newspaper name (e.g., Divya Bhaskar)" required />
+        </div>
+
+        <div class="field">
+          <label for="media_link">Media Link (Optional)</label>
+          <input id="media_link" name="media_link" type="url" placeholder="https://example.com" />
+        </div>
+
+        <div class="field">
+          <label for="files">PDF Files</label>
+          <input id="files" name="files" type="file" accept="application/pdf" multiple required />
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button type="submit">Process PDFs</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

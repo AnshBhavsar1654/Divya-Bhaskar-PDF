@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; background: #f6f7fb; color: #222; }
+.container { max-width: 860px; margin: 40px auto; background: #fff; border-radius: 10px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+h1 { margin-top: 0; }
+.field { margin: 16px 0; }
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+input[type="text"], input[type="date"], input[type="url"], input[type="file"] { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; }
+button, .btn { display: inline-block; background: #2b6cb0; color: #fff; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; text-decoration: none; }
+button:hover, .btn:hover { background: #1e4f85; }
+.btn.primary { background: #38a169; }
+.btn.primary:hover { background: #2f855a; }
+.summary p { margin: 6px 0; }
+#note { margin-top: 20px; font-size: 0.95rem; color: #444; background: #f0f5ff; border: 1px solid #d0e2ff; border-radius: 6px; padding: 10px; }
